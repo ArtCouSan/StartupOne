@@ -2,21 +2,23 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="core" />
-        <module name="eureka-client" />
-        <module name="eureka-server" />
-        <module name="posts" />
         <module name="discovery" />
+        <module name="discovery-server" />
+        <module name="posts" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api-gateway" target="11" />
       <module name="changeTheWold" target="11" />
       <module name="core" target="1.5" />
       <module name="discovery" target="11" />
+      <module name="discovery-server" target="11" />
       <module name="eureka-client" target="11" />
       <module name="eureka-server" target="11" />
       <module name="gateway" target="11" />
@@ -25,7 +27,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
       <module name="discovery" options="-parameters" />
+      <module name="discovery-server" options="-parameters" />
       <module name="eureka-client" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="gateway" options="-parameters" />
