@@ -1,8 +1,10 @@
 server:
   port: 8082
+
 spring:
   application:
-    name: users
+    name: v1-users
+
 eureka:
   instance:
     hostname: discovery-server

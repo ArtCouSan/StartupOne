@@ -11,9 +11,6 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import javax.validation.constraints.AssertTrue;
-
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDateTime;

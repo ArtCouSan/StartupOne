@@ -1,8 +1,10 @@
 server:
-  port: 8081
+  port: 8080
+
 spring:
   application:
-    name: v1-posts
+    name: api-gateway
+
 eureka:
   instance:
     hostname: discovery-server
@@ -15,3 +17,19 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/, http://localhost:8761/eureka/
+
+zuul:
+  host:
+    connect-timeout-millis: 5000000
+    socket-timeout-millis: 5000000
+  ignoredService: '*'
+  routes:
+    v1-posts:
+      path: /v1-posts/**
+      serviceId: v1-posts
+      stripPrefix: true
+    v1-users:
+      path: /v1-users/**
+      serviceId: v1-users
+      stripPrefix: true
+
