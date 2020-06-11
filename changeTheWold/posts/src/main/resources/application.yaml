@@ -5,7 +5,7 @@ spring:
     name: posts
 eureka:
   instance:
-    hostname: localhost
+    hostname: discovery-server
     metadataMap:
       instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     preferIpAddress: true
@@ -14,4 +14,4 @@ eureka:
   client:
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://discovery-server:8761/eureka/

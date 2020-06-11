@@ -1,13 +1,21 @@
-FROM maven AS MAVEN_TOOL_CHAIN
-WORKDIR /tmp/v1-posts/
-COPY pom.xml /tmp/v1-posts/
-COPY /src /tmp/v1-posts/src/
-RUN mvn package
+FROM openjdk:11 as build
+WORKDIR /workspace/v1/posts
+
+COPY /posts/mvnw .
+COPY /posts/.mvn .mvn
+COPY /posts/pom.xml .
+COPY /posts/src src
+
+RUN chmod +x ./mvnw
+RUN ./mvnw install -DskipTests
+RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 FROM openjdk:11
-WORKDIR /opt/v1/posts
-RUN mvn clean install
-COPY target/v1-posts.jar v1-posts.jar
-EXPOSE 8080
+VOLUME /tmp
+ARG DEPENDENCY=/workspace/v1/posts/target/dependency
+COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
+COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
+EXPOSE 8081
+ENTRYPOINT ["java","-cp","app:app/lib/*","br.com.posts.PostsApplication"]
 
-CMD ["java", "-jar", "v1-posts.jar"]
