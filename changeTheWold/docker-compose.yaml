@@ -22,3 +22,16 @@ services:
       - discovery-server
     depends_on:
       - discovery-server
+  v1-users:
+    build:
+      context: ./
+      dockerfile: ./users/Dockerfile
+    ports:
+      - '8082:8082'
+    environment:
+      - ADDITIONAL_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8082
+      - PROFILE=dev
+    links:
+      - discovery-server
+    depends_on:
+      - discovery-server
