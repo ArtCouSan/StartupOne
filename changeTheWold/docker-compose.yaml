@@ -40,14 +40,14 @@ services:
     environment:
       POSTGRES_PASSWORD: "Postgres2020!"
     ports:
-       - '1543:1543'
+       - '15432:5432'
   db-admin-v1-posts:
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: "xpto@gmail.com"
       PGADMIN_DEFAULT_PASSWORD: "Postgres2020!"
     ports:
-      - "1544:1544"
+      - '16543:80'
     depends_on:
      - discovery-server
      - db-v1-posts
@@ -64,3 +64,4 @@ services:
       - discovery-server
     depends_on:
       - discovery-server
+

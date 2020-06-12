@@ -31,3 +31,11 @@ j
 :posts/src/main/java/br/com/posts/endpoint/entity/Post.java,1\c\1cbdc730ad8824dedfcb021a5c166f2b67def4e9
 j
 :posts/src/main/java/br/com/posts/endpoint/entity/File.java,0\4\04518ee83b86376feef2e638a889437489868514
+F
+api-gateway/Dockerfile,9\5\9548e2ce3bdfe112d8c757987e1beebc1ecab5ed
+v
+Fapi-gateway/src/main/java/br/com/apigateway/ApiGatewayApplication.java,0\f\0fb5bdd358218c2a86577ca625091226de113b0e
+C
+api-gateway/pom.xml,2\b\2bfa2b108f2439e99e004f4085b58c22cf995f73
+D
+api-gateway/mvnw.cmd,4\e\4e78ccd1f7fc9cfe04c98f2b5dff3904ec2e9bd6
