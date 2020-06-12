@@ -1,17 +1,49 @@
 package br.com.posts.endpoint.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import br.com.posts.endpoint.dto.PostAlterDTO;
+import br.com.posts.endpoint.dto.PostListDTO;
+import br.com.posts.endpoint.dto.PostSaveDTO;
+import br.com.posts.endpoint.entity.Post;
+import br.com.posts.endpoint.service.PostService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/post")
 public class PostsController {
 
-    // TODO: Remover
+    private final PostService postService;
+
+    public PostsController(PostService postService) {
+        this.postService = postService;
+    }
+
+    @PostMapping()
+    public ResponseEntity<Post> savePost(@RequestBody PostSaveDTO postSaveDTO) {
+        return new ResponseEntity<Post>(this.postService.savePost(postSaveDTO), HttpStatus.CREATED);
+    }
+
+    @PutMapping(name = "/{id}")
+    public ResponseEntity<Post> alterPost(@PathVariable Long id, @RequestBody PostAlterDTO postAlterDTO){
+        return new ResponseEntity<Post>(this.postService.alterPost(id, postAlterDTO), HttpStatus.OK);
+    }
+
+    @DeleteMapping(name = "/{id}")
+    public ResponseEntity<Post> deletePost(@PathVariable Long id){
+        return new ResponseEntity<Post>(this.postService.deletePost(id), HttpStatus.OK);
+    }
+
+    @GetMapping(name = "/{id}")
+    public ResponseEntity<Post> findPost(@PathVariable Long id){
+        return new ResponseEntity<Post>(this.postService.findPost(id), HttpStatus.OK);
+    }
+
     @GetMapping()
-    public String hello(){
-        return "Teste";
+    public ResponseEntity<List<Post>> listPost(@RequestBody PostListDTO postListDTO) {
+        return new ResponseEntity<List<Post>>(this.postService.listPost(postListDTO), HttpStatus.OK);
     }
 
 }

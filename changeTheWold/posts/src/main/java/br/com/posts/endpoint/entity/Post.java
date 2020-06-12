@@ -1,6 +1,8 @@
 package br.com.posts.endpoint.entity;
 
 import br.com.posts.endpoint.enums.PostStatusEnum;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,11 +29,9 @@ public class Post {
     @Column(name = "POST_DESCRIPTION")
     private String description;
 
-//    @Column(name = "POST_PRINCIPAL_IMAGE")
-//    private File image;
-//
-//    @Column(name = "POST_GALLERY_IMAGE")
-//    private List<File> images;
+    @JsonManagedReference
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "post", fetch = FetchType.LAZY)
+    private List<File> files;
 
     @Column(name = "POST_DATE_INSERT")
     private LocalDateTime dateInsert;
