@@ -3,6 +3,15 @@ server:
 spring:
   application:
     name: v1-posts
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:15432/db-v1-posts
+    username: postgres
+    password: Postgres2020!
 eureka:
   instance:
     hostname: discovery-server

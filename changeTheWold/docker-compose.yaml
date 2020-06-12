@@ -41,6 +41,8 @@ services:
       POSTGRES_PASSWORD: "Postgres2020!"
     ports:
        - '15432:5432'
+    links:
+      - v1-posts
   db-admin-v1-posts:
     image: dpage/pgadmin4
     environment:

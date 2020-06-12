@@ -27,11 +27,11 @@ public class Post {
     @Column(name = "POST_DESCRIPTION")
     private String description;
 
-    @Column(name = "POST_PRINCIPAL_IMAGE")
-    private File image;
-
-    @Column(name = "POST_GALLERY_IMAGE")
-    private List<File> images;
+//    @Column(name = "POST_PRINCIPAL_IMAGE")
+//    private File image;
+//
+//    @Column(name = "POST_GALLERY_IMAGE")
+//    private List<File> images;
 
     @Column(name = "POST_DATE_INSERT")
     private LocalDateTime dateInsert;
