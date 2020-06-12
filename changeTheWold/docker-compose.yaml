@@ -35,9 +35,13 @@ services:
       - discovery-server
     depends_on:
       - discovery-server
+      - db-v1-posts
+      - db-admin-v1-posts
   db-v1-posts:
     image: postgres
     environment:
+      POSTGRES_DB: "dv-v1-posts"
+      POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "Postgres2020!"
     ports:
        - '15432:5432'

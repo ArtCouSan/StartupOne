@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/post")
+@RequestMapping(value = "/v1/post")
 public class PostsController {
 
     private final PostService postService;
@@ -21,7 +21,7 @@ public class PostsController {
         this.postService = postService;
     }
 
-    @PostMapping()
+    @PostMapping
     public ResponseEntity<Post> savePost(@RequestBody PostSaveDTO postSaveDTO) {
         return new ResponseEntity<Post>(this.postService.savePost(postSaveDTO), HttpStatus.CREATED);
     }
@@ -31,17 +31,17 @@ public class PostsController {
         return new ResponseEntity<Post>(this.postService.alterPost(id, postAlterDTO), HttpStatus.OK);
     }
 
-    @DeleteMapping(name = "/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Post> deletePost(@PathVariable Long id){
         return new ResponseEntity<Post>(this.postService.deletePost(id), HttpStatus.OK);
     }
 
-    @GetMapping(name = "/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Post> findPost(@PathVariable Long id){
         return new ResponseEntity<Post>(this.postService.findPost(id), HttpStatus.OK);
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<Post>> listPost(@RequestBody PostListDTO postListDTO) {
         return new ResponseEntity<List<Post>>(this.postService.listPost(postListDTO), HttpStatus.OK);
     }
