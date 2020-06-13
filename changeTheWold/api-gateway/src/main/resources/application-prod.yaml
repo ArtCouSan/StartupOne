@@ -5,8 +5,8 @@ zuul:
   ignoredService: '*'
   routes:
     v1-posts:
-      path: /v1/posts/**
+      path: /**
       url: http://v1-posts:8081/
     v1-users:
-      path: /v1/user/**
+      path: /**
       url: http://v1-users:8082/
