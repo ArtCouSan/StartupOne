@@ -1,4 +1,4 @@
-FROM openjdk:11 as build
+FROM openjdk:11-jdk-slim as build
 WORKDIR /workspace/v1/users
 
 COPY /users/mvnw .
@@ -7,10 +7,10 @@ COPY /users/pom.xml .
 COPY /users/src src
 
 RUN chmod +x ./mvnw
-RUN ./mvnw install -DskipTests
+RUN mvnw install -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
-FROM openjdk:11
+FROM openjdk:11-jdk-slim
 VOLUME /tmp
 ARG DEPENDENCY=/workspace/v1/users/target/dependency
 COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
