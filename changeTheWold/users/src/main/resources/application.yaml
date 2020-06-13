@@ -18,3 +18,12 @@ eureka:
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/, http://localhost:8761/eureka/
 
+  spring:
+    data:
+      mongodb:
+        host:
+          localhost
+        port:
+          27017
+        database:
+          user-registration
