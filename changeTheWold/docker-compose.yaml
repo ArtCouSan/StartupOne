@@ -75,5 +75,3 @@ services:
     container_name: "db-v1-users"
     ports:
     - 27017:27017
-    depends-on:
-     - v1-users
