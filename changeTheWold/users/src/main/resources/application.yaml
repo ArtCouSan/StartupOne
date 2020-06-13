@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: v1-users
+  profiles:
+    active: prod
 
 eureka:
   instance:
@@ -17,4 +19,3 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-server:8761/eureka/, http://localhost:8761/eureka/
-
