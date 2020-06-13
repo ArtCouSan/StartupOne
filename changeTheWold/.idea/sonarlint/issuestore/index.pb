@@ -39,3 +39,17 @@ C
 api-gateway/pom.xml,2\b\2bfa2b108f2439e99e004f4085b58c22cf995f73
 D
 api-gateway/mvnw.cmd,4\e\4e78ccd1f7fc9cfe04c98f2b5dff3904ec2e9bd6
+s
+Cposts/src/main/java/br/com/posts/endpoint/dto/PostAlterFileDTO.java,c\0\c057fb2bf6dced3e25f30c8d3e6f0679a5749c4d
+r
+Bposts/src/main/java/br/com/posts/endpoint/service/PostService.java,c\b\cb6ef6b134cd8ab1305aaaa7a500b83d020b164d
+{
+Kposts/src/main/java/br/com/posts/endpoint/service/impl/PostServiceImpl.java,e\c\ec9d7b5d8b43b99515673b682344419c447955cb
+r
+Bposts/src/main/java/br/com/posts/endpoint/dto/PostSaveFileDTO.java,6\8\681d1b53abeaeaaf17621343713d1f6942470771
+s
+Cposts/src/main/java/br/com/posts/endpoint/enums/PostStatusEnum.java,5\d\5d8c0fd793d171578de131b5039000c54c1edcf9
+n
+>posts/src/main/java/br/com/posts/endpoint/dto/PostSaveDTO.java,5\a\5a9d7afcf8a51b459cb9fd3ccbcd4f0528634f64
+o
+?posts/src/main/java/br/com/posts/endpoint/dto/PostAlterDTO.java,c\d\cd62d1d10127cd9327ff78cd7e0ebdbf87269e6e

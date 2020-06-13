@@ -1,0 +1,12 @@
+zuul:
+  host:
+    connect-timeout-millis: 5000000
+    socket-timeout-millis: 5000000
+  ignoredService: '*'
+  routes:
+    v1-posts:
+      path: /v1/posts/**
+      url: http://v1-posts:8081/
+    v1-users:
+      path: /v1/user/**
+      url: http://v1-users:8082/

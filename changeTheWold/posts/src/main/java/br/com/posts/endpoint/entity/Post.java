@@ -30,7 +30,7 @@ public class Post {
     private String description;
 
     @JsonManagedReference
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "post", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "post", fetch = FetchType.EAGER)
     private List<File> files;
 
     @Column(name = "POST_DATE_INSERT")
@@ -42,6 +42,7 @@ public class Post {
     @Column(name = "POST_DATE_DELETE")
     private LocalDateTime dateDelete;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "POST_STATUS")
     private PostStatusEnum status;
 
