@@ -6,4 +6,4 @@ spring:
       port:
         27017
       database:
-        user-registration
+        db-v1-users
