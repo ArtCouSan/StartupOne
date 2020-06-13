@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: v1-users
+  profiles:
+    active: dev
 
 eureka:
   instance:

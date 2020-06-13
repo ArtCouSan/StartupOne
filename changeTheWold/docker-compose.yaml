@@ -67,6 +67,13 @@ services:
       - PROFILE=dev
     links:
       - discovery-server
+      - db-v1-users
     depends_on:
       - discovery-server
-
+  db-v1-users:
+    image: mongo
+    container_name: "db-v1-users"
+    ports:
+    - 27017:27017
+    depends-on:
+     - v1-users
