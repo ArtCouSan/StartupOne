@@ -22,6 +22,7 @@ public class File {
     @Column(name = "FILE_NAME")
     private String name;
 
+    @Lob
     @Column(name = "FILE_DATA")
     private String data;
 
@@ -32,7 +33,7 @@ public class File {
     private Integer position;
 
     @JsonBackReference
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "POST_ID")
     private Post post;
 

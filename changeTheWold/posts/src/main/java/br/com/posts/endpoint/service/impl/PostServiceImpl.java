@@ -11,7 +11,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,9 +30,11 @@ public class PostServiceImpl implements PostService {
     @Override
     public Post savePost(PostSaveDTO postSaveDTO) {
         Post post = postSaveDTO.parsePostDTO();
-        post.setDateInsert(LocalDateTime.now());
+        post.setDateInsert(this.dateNow());
         post.setStatus(PostStatusEnum.ACTIVE);
-        return postRepository.save(post);
+        post = postRepository.save(post);
+
+        return post;
     }
 
     @Override
@@ -38,13 +43,14 @@ public class PostServiceImpl implements PostService {
         Post postAlter = postAlterDTO.parsePostDTO();
         post.setTitle(postAlter.getTitle() != null ? postAlter.getTitle() : post.getTitle());
         post.setDescription(postAlter.getDescription() != null ? postAlter.getDescription() : post.getDescription());
-        post.setDateAlter(LocalDateTime.now());
+        post.setDateAlter(this.dateNow());
         return postRepository.save(post);
     }
 
     @Override
     public Post deletePost(Long id) {
         Post post = postExist(id);
+        post.setDateDelete(this.dateNow());
         post.setStatus(PostStatusEnum.DISABLE);
         return post;
     }
@@ -59,6 +65,11 @@ public class PostServiceImpl implements PostService {
     public List<Post> listPost(PostListDTO postListDTO) {
         // TODO: CRIAR
         return postRepository.findAll();
+    }
+
+    private LocalDateTime dateNow(){
+        ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
+        return zonedDateTime.toLocalDateTime();
     }
 
     private Post postExist(Long id) {

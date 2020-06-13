@@ -22,25 +22,10 @@ services:
       - discovery-server
     depends_on:
       - discovery-server
-  v1-posts:
-    build:
-      context: ./
-      dockerfile: ./posts/Dockerfile
-    ports:
-      - '8081:8081'
-    environment:
-      - ADDITIONAL_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8081
-      - PROFILE=dev
-    links:
-      - discovery-server
-    depends_on:
-      - discovery-server
-      - db-v1-posts
-      - db-admin-v1-posts
   db-v1-posts:
     image: postgres
     environment:
-      POSTGRES_DB: "dv-v1-posts"
+      POSTGRES_DB: "db-v1-posts"
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "Postgres2020!"
     ports:
@@ -57,6 +42,20 @@ services:
     depends_on:
      - discovery-server
      - db-v1-posts
+  v1-posts:
+    restart: on-failure
+    build:
+      context: ./
+      dockerfile: ./posts/Dockerfile
+    ports:
+      - '8081:8081'
+    environment:
+      - ADDITIONAL_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8081
+      - PROFILE=dev
+    links:
+      - discovery-server
+    depends_on:
+      - discovery-server
   v1-users:
     build:
       context: ./

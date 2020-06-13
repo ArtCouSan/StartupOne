@@ -1,0 +1,10 @@
+
+M
+java:S1128
+"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ŒØ¡Òª.
+`
+java:S1128">Remove this unused import 'br.com.posts.endpoint.entity.File'.(¡»¦Œùÿÿÿÿ8ŒØ¡Òª.
+`
+java:S1128">Remove this unused import 'br.com.posts.endpoint.entity.Post'.(×ÂÅ¿úÿÿÿÿ8ŒØ¡Òª.
+M
+java:S1128	"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ŒØ¡Òª.
