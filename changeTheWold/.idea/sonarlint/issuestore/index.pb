@@ -53,3 +53,15 @@ n
 >posts/src/main/java/br/com/posts/endpoint/dto/PostSaveDTO.java,5\a\5a9d7afcf8a51b459cb9fd3ccbcd4f0528634f64
 o
 ?posts/src/main/java/br/com/posts/endpoint/dto/PostAlterDTO.java,c\d\cd62d1d10127cd9327ff78cd7e0ebdbf87269e6e
+x
+Husers/src/main/java/br/com/users/endpoint/repository/UserRepository.java,3\0\30911628d634d6b965fd8215a5dc4c6a9f90db89
+r
+Busers/src/main/java/br/com/users/endpoint/service/UserService.java,c\8\c8c13f0fdcbbe332a469d362bae32b8be194783c
+j
+:users/src/main/java/br/com/users/endpoint/dto/UserDTO.java,8\3\839e5be73659b9b9ad0304222285d7c043d55253
+j
+:users/src/main/java/br/com/users/endpoint/entity/User.java,8\2\820e80c721ecdafb23ef8d83b1a3636e1e86cfbe
+{
+Kusers/src/main/java/br/com/users/endpoint/service/impl/UserServiceImpl.java,7\4\74f1dce4cc7037c8812510b06e0785ac284d992a
+k
+;users/src/test/java/br/com/users/UsersApplicationTests.java,8\8\8890bde763299b2dee7f5f167a29468afb9c63bd
