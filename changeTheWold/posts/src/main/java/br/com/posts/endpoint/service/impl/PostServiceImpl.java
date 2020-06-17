@@ -62,7 +62,7 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<Post> listPost(PostListDTO postListDTO) {
+    public List<Post> listPost() {
         // TODO: CRIAR
         return postRepository.findAll();
     }
