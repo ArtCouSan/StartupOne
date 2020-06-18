@@ -65,3 +65,7 @@ j
 Kusers/src/main/java/br/com/users/endpoint/service/impl/UserServiceImpl.java,7\4\74f1dce4cc7037c8812510b06e0785ac284d992a
 k
 ;users/src/test/java/br/com/users/UsersApplicationTests.java,8\8\8890bde763299b2dee7f5f167a29468afb9c63bd
+{
+Kapi-gateway/src/test/java/br/com/apigateway/ApiGatewayApplicationTests.java,5\8\58e0005f9bafa7476451208817e4e76d1d43d228
+p
+@posts/src/main/java/br/com/posts/endpoint/config/CorsConfig.java,8\7\87d6ef93c7a6fc427fdbb194f29b2a400fa0e729

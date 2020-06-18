@@ -1,9 +1,9 @@
 
 w
-java:S1488<"\Immediately return this expression instead of assigning it to the temporary variable "post".(úÂ„©ıÿÿÿÿ
+java:S1488;"\Immediately return this expression instead of assigning it to the temporary variable "post".(úÂ„©ıÿÿÿÿ
 R
 java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8õéñĞª.
 M
-java:S1135B"2Complete the task associated to this TODO comment.(É€Ñèøÿÿÿÿ
+java:S1135A"2Complete the task associated to this TODO comment.(É€Ñèøÿÿÿÿ
 d
 java:S1128"BRemove this unused import 'br.com.posts.endpoint.dto.PostListDTO'.(£ôÙ‡ıÿÿÿÿ8¦ÉŸş«.
