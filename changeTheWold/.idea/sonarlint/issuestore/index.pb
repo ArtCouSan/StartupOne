@@ -69,3 +69,7 @@ k
 Kapi-gateway/src/test/java/br/com/apigateway/ApiGatewayApplicationTests.java,5\8\58e0005f9bafa7476451208817e4e76d1d43d228
 p
 @posts/src/main/java/br/com/posts/endpoint/config/CorsConfig.java,8\7\87d6ef93c7a6fc427fdbb194f29b2a400fa0e729
+k
+;posts/src/test/java/br/com/posts/PostsApplicationTests.java,4\5\45fe1d05c6fb7551d48ad9a1afa02cb785f839fe
+v
+Fposts/src/test/java/br/com/posts/endpoint/service/PostServiceTest.java,a\7\a75c8ed6de616cf7f7a8db23d571070b5c3febfe

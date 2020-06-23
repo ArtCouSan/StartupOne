@@ -32,8 +32,7 @@ public class PostServiceImpl implements PostService {
         Post post = postSaveDTO.parsePostDTO();
         post.setDateInsert(this.dateNow());
         post.setStatus(PostStatusEnum.ACTIVE);
-        post = postRepository.save(post);
-        return post;
+        return postRepository.save(post);
     }
 
     @Override
@@ -62,7 +61,6 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Post> listPost() {
-        // TODO: CRIAR
         return postRepository.findAll();
     }
 

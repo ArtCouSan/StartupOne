@@ -26,7 +26,7 @@ public class PostsController {
         return new ResponseEntity<Post>(this.postService.savePost(postSaveDTO), HttpStatus.CREATED);
     }
 
-    @PutMapping(name = "/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Post> alterPost(@PathVariable Long id, @RequestBody PostAlterDTO postAlterDTO){
         return new ResponseEntity<Post>(this.postService.alterPost(id, postAlterDTO), HttpStatus.OK);
     }
