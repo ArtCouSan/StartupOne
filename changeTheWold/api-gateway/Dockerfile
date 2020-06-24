@@ -1,10 +1,10 @@
 FROM openjdk:11 as build
 WORKDIR /workspace/v1/api-gateway
 
-COPY /api-gateway/mvnw .
-COPY /api-gateway/.mvn .mvn
-COPY /api-gateway/pom.xml .
-COPY /api-gateway/src src
+COPY /mvnw .
+COPY /.mvn .mvn
+COPY /pom.xml .
+COPY /src src
 
 RUN chmod +x ./mvnw
 RUN ./mvnw install -DskipTests

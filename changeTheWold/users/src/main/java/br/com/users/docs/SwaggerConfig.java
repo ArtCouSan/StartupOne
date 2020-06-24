@@ -19,10 +19,11 @@ import javax.servlet.ServletContext;
 @EnableSwagger2
 public class SwaggerConfig implements WebMvcConfigurer {
 
+
     @Autowired
     private ServletContext servletContext;
 
-    public static final String PATH = "/v1/user";
+    public static final String PATH = "/v1/user/docs";
 
     @Bean
     public Docket api() {
@@ -51,5 +52,4 @@ public class SwaggerConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler(PATH + "/**").addResourceLocations("classpath:/META-INF/resources/");
     }
-
 }
