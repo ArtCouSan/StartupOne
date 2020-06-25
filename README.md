@@ -14,6 +14,6 @@
 - No diretorio \StartupOne-Back\changeTheWold executar o comando docker-compose up -d
 - Após isso irá executar os servicos, no momento sem carga de dados
 
-# obersvações
+# Observações
 
 Os microserviços estão configurados com o API Gateway e Service Discovery
