@@ -77,3 +77,11 @@ x
 Hposts/src/main/java/br/com/posts/endpoint/repository/PostRepository.java,c\0\c047928fd675f4e60515fb4ad66899772a92ef50
 p
 @users/src/main/java/br/com/users/endpoint/config/CorsConfig.java,b\0\b0866c5cad101a2e53e180c5d4955e0c8510efa2
+|
+Lposts/src/test/java/br/com/posts/endpoint/controller/PostControllerTest.java,6\c\6c41b3b0c8a3406849198d2b75cabe7c9cdb863f
+g
+7posts/src/test/java/br/com/posts/ui/PostEditUiTest.java,6\f\6feb41a54de16c5ffdafd22863422b7e3823260a
+i
+9posts/src/test/java/br/com/posts/ui/PostDeleteUiTest.java,2\6\26ed73132e55283db904711c9bd7463d5e0b07e9
+g
+7posts/src/test/java/br/com/posts/ui/PostSaveUiTest.java,c\3\c32ad27dfeb2edfa358af73a8c79ecf8814057cd

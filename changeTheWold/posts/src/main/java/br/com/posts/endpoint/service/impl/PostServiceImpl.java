@@ -32,7 +32,8 @@ public class PostServiceImpl implements PostService {
         Post post = postSaveDTO.parsePostDTO();
         post.setDateInsert(this.dateNow());
         post.setStatus(PostStatusEnum.ACTIVE);
-        return postRepository.save(post);
+        post = postRepository.save(post);
+        return post;
     }
 
     @Override

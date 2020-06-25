@@ -13,9 +13,12 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -27,11 +30,16 @@ public class PostServiceTest {
     @InjectMocks
     private PostServiceImpl postService;
 
+    @Before
+    public void init() {
+        MockitoAnnotations.initMocks(this);
+    }
+
     @Test
     public void savePostTest() {
         PostSaveDTO postSaveDTO = createSavePostDTO();
         Post post = createPost();
-        Mockito.when(this.postRepository.save(post)).thenReturn(post);
+        Mockito.when(this.postRepository.save(Mockito.any())).thenReturn(post);
         Post postCreated = this.postService.savePost(postSaveDTO);
         Assert.assertNotNull(postCreated);
     }
@@ -59,9 +67,26 @@ public class PostServiceTest {
         postAlter.setDateAlter(LocalDateTime.now());
 
         Mockito.when(this.postRepository.findById(1l)).thenReturn(postFinded);
-        Mockito.when(this.postRepository.save(postAlter)).thenReturn(postAlter);
+        Mockito.when(this.postRepository.save(Mockito.any())).thenReturn(postAlter);
         postAlter = this.postService.alterPost(1l, postAlterDTO);
         Assert.assertNotNull(postAlter);
+    }
+
+    @Test
+    public void findPostTest() {
+        Optional<Post> postFind = Optional.of(createPost());
+        Mockito.when(this.postRepository.findById(1l)).thenReturn(postFind);
+        Post postFinded = this.postService.findPost(1l);
+        Assert.assertNotNull(postFinded);
+    }
+
+    @Test
+    public void listAllPostTest() {
+        List<Post> postList = new ArrayList<>();
+        postList.add(createPost());
+        Mockito.when(this.postRepository.findAll()).thenReturn(postList);
+        List<Post> postListed = this.postService.listPost();
+        Assert.assertNotNull(postListed);
     }
 
     private Post createPost() {
