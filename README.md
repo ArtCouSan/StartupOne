@@ -12,6 +12,8 @@
 
 - http://localhost:8082/v1/user/docs/swagger-ui.html
 
+- http://localhost:8761/ (Eureka)
+
 # Passo a passo - Setup
 
 - Clone o projeto
