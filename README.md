@@ -8,8 +8,9 @@
 
 # Docs
 
-http://localhost:8081/v1/post/docs/swagger-ui.html
-http://localhost:8082/v1/user/docs/swagger-ui.html
+- http://localhost:8081/v1/post/docs/swagger-ui.html
+
+- http://localhost:8082/v1/user/docs/swagger-ui.html
 
 # Passo a passo - Setup
 
