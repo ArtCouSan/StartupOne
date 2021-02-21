@@ -74,4 +74,8 @@ services:
     image: mongo
     container_name: "db-v1-users"
     ports:
-    - 27017:27017
+      - 27017:27017
+   mongo-seed:
+    build: ./users/mongo-seed
+    links:
+      - db-v1-users 

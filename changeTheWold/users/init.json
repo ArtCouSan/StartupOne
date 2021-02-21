@@ -1,0 +1,38 @@
+[
+{
+  "dateBirth": "2020-06-13T21:38:51.125Z",
+  "email": "example@example.com",
+  "firstName": "Eric",
+  "genre": "male",
+  "lastName": "",
+  "password": "123456789",
+  "phoneNumber": "(11) 12345-7891"
+},
+{
+  "dateBirth": "2020-06-13T21:38:51.125Z",
+  "email": "example@example.com",
+  "firstName": "Arthur",
+  "genre": "male",
+  "lastName": "",
+  "password": "123456789",
+  "phoneNumber": "(11) 12345-7891"
+},
+{
+  "dateBirth": "2020-06-13T21:38:51.125Z",
+  "email": "example@example.com",
+  "firstName": "Renan",
+  "genre": "male",
+  "lastName": "",
+  "password": "123456789",
+  "phoneNumber": "(11) 12345-7891"
+},
+{
+  "dateBirth": "2020-06-13T21:38:51.125Z",
+  "email": "example@example.com",
+  "firstName": "Rubens",
+  "genre": "male",
+  "lastName": "",
+  "password": "123456789",
+  "phoneNumber": "(11) 12345-7891"
+}
+]
